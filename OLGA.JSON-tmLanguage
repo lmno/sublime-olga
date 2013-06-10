@@ -1,0 +1,49 @@
+{ "name": "OLGA",
+  "scopeName": "source.olga",
+  "fileTypes": ["key", "genkey", "conv", "rekey"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#dataTypes" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.number-sign.olga",
+          "match": "((!).*$)",
+          "captures": {
+            "2" : { "name": "punctuation.definition.comment.olga"}
+          },
+          "comment": "Comments - whole line or partial"
+        }
+      ]
+    },
+    "dataTypes": {
+      "patterns": [
+        { "name": "string.name.value.olga",
+          "begin": "\"",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.string.begin.olga" }
+          },
+          "end": "(?<!\\\\)\"",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.string.end.olga" }
+          },
+          "comment": "String"
+        },
+        {  "name": "meta.tag.object.olga",
+           "match": "[A-Za-z]+\\-[0-9]+",
+           "comment": "Tag"
+        },
+        { "name": "constant.numeric.float.olga",
+          "match": "(\\b\\d+(\\.[0-9]+)?|\\.[0-9]+)([eE][+-]?[0-9]+)?",
+          "comment": "Float"
+        },
+        { "name": "constant.numeric.integer.olga",
+          "match": "-?[0-9]+",
+          "comment": "Integer"
+        }
+      ]
+    }
+  },
+  "uuid": "b21d40c0-f5fd-4687-9cdf-041150809411"
+}
