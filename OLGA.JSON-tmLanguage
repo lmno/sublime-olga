@@ -19,7 +19,7 @@
     },
     "dataTypes": {
       "patterns": [
-        { "name": "string.name.value.olga",
+        { "name": "string.quoted.double.olga",
           "begin": "\"",
           "beginCaptures": {
             "0": { "name": "punctuation.definition.string.begin.olga" }
@@ -41,6 +41,13 @@
         { "name": "constant.numeric.integer.olga",
           "match": "-?[0-9]+",
           "comment": "Integer"
+        }
+      ]
+    },
+    "connection": {
+      "patterns": [
+        {  "name": "keyword.control.olga",
+           "match": "\\b(CONNECTION|TERMINALS)\\b"
         }
       ]
     }
